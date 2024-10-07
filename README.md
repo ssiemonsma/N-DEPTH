@@ -26,7 +26,7 @@ For long, unattended training sessions, I would encourage the use of Papermill w
 papermill N-DEPTH_training_notebook.ipynb N-DEPTH_training_notebook.ipynb --inject-input-path --request-save-on-cell-execute --no-progress-bar --autosave-cell-every 60
 ```
 The training notebook will be update in-place every 60 seconds and can be inspected in Jupyter Notebook or Jupyer Lab.
-The output can be saved to a differnt notebook by choosing an alternative file name for the second [Papermill](https://github.com/nteract/papermill) argument.
+The output can be saved to a different notebook by choosing an alternative file name for the second [Papermill](https://github.com/nteract/papermill) argument.
 
 The training script will generate checkpoint files in a "weights" directory and TensorBoard logs in a "TensorBoard_logs" directory.
 An "images" directory will also be created and populated with lossless depth-to-RGB encodings.
