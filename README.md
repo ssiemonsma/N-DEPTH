@@ -1,7 +1,7 @@
 # N-DEPTH: Neural Depth Encoding for Compression-Resilient 3D Video Streaming
 [Paper](https://www.mdpi.com/2079-9292/13/13/2557) | [Research Lab](https://www.holorealitylab.com/)
 
-This repository contains the training code for N-DEPTH (Neural Depth Encoding for Compression-Resilient 3D Video Streaming), as described in the paper "N-DEPTH: Neural Depth Encoding for Compression-Resilient 3D Video Streaming" by Stephen Siemonsma and Tyler Bell.
+This repository contains the training code for N-DEPTH (Neural Depth Encoding), as described in the paper "N-DEPTH: Neural Depth Encoding for Compression-Resilient 3D Video Streaming" by Stephen Siemonsma and Tyler Bell.
 
 ## Overview
 
@@ -9,7 +9,7 @@ N-DEPTH is a novel neural depth encoding method optimized for lossy compression 
 
 ## Requirements
 - Anaconda or Miniconda
-- [FlyingThing3D dataset disparity maps](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html)
+- [FlyingThing3D](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html) dataset disparity maps
 - NVIDIA GPU (other configurations untested)
 
 ## Setup
@@ -18,7 +18,7 @@ conda env create --name ndepth --file=environment.yml
 conda activate ndepth
 jupyter-notebook N-DEPTH_training_notebook.ipynb
 ```
-Inside of the training notebook under the "Configuration" section, you must set config.dataset_path to the parent directory where you have unpacked the FlyingThings3D disparity maps.
+Inside of the training notebook under the "Configuration" section, you must set config.dataset_path to the parent directory where you have unpacked the FlyingThings3D disparity maps (the expected folder structure is dataset_path/FlyingThings3D/disparity).
 All of the other configuration variables are pre-set to reasonable default corresponding to the results of the journal publication.
 The N-Depth network can be trained by running the entire notebook (i.e., Run -> Run All Cells).
 For long, unattended training sessions, I would encourage the use of Papermill with a command such as the following:
