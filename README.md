@@ -19,20 +19,20 @@ conda activate ndepth
 jupyter-notebook N-DEPTH_training_notebook.ipynb
 ```
 Inside of the training notebook under the "Configuration" section, you must set config.dataset_path to the parent directory where you have unpacked the FlyingThings3D disparity maps (the expected folder structure is dataset_path/FlyingThings3D/disparity).
-All of the other configuration variables are pre-set to reasonable default corresponding to the results of the journal publication.
+All of the other configuration variables are preset to reasonable defaults corresponding to the results of the journal publication.
 The N-Depth network can be trained by running the entire notebook (i.e., Run -> Run All Cells).
 For long, unattended training sessions, I would encourage the use of Papermill with a command such as the following:
 ```
 papermill N-DEPTH_training_notebook.ipynb N-DEPTH_training_notebook.ipynb --inject-input-path --request-save-on-cell-execute --no-progress-bar --autosave-cell-every 60
 ```
-The training notebook will be update in-place every 60 seconds and can be inspected in Jupyter Notebook or Jupyer Lab.
+The training notebook will be updated in-place every 60 seconds and can be inspected in Jupyter Notebook or Jupyter Lab.
 The output can be saved to a different notebook by choosing an alternative file name for the second [Papermill](https://github.com/nteract/papermill) argument.
 
 The training script will generate checkpoint files in a "weights" directory and TensorBoard logs in a "TensorBoard_logs" directory.
 An "images" directory will also be created and populated with lossless depth-to-RGB encodings.
 These encodings are in the form of 100x100 PNGs which show the depth-to-RGB mapping at various points of the training session.
 If the elements of "neural_encoding_for_ones_mask" images are plotted row-wise with 3D axes corresponding to the red, green, and blue pixel values, helical encoding structures will be evident as the network nears convergence.
-When these plots are animated over the training duration, [videos such as this supplementary video](https://zenodo.org/records/11399505/files/N-DEPTH-RGB-15s.mp4) from the journal publication can be generated.
+When these plots are animated over the training duration, videos such as [this supplementary video](https://zenodo.org/records/11399505/files/N-DEPTH-RGB-15s.mp4) from the journal publication can be generated.
 
 ## Citation
 
